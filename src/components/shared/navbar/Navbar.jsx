@@ -29,7 +29,7 @@ const Navbar = () => {
   console.log(user);
   return (
     <>
-      <nav className="flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 md:flex-wrap lg:py-3.5">
+      <nav className="flex-no-wrap flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 md:flex-wrap lg:py-3.5 sticky top-0 z-50">
         <div className="flex w-full items-center justify-between md:max-w-7xl md:px-12 mx-auto">
           <button
             onClick={() => setCollapse(!collapse)}
