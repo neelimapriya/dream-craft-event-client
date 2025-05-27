@@ -1,5 +1,6 @@
 import EventCards from "../../components/cards/EventCards";
 import TeamCards from "../../components/cards/TeamCards";
+import FeaturedShopPage from "../FeaturedSop/FeaturedShopPage";
 import Booking from "../bookings/Booking";
 import Organizer from "./Organizer/Organizer";
 // import Banner from "./Banner";
@@ -19,6 +20,7 @@ const Home = () => {
 
       <Booking></Booking>
       <EventCards />
+      <FeaturedShopPage />
       <TeamCards />
     </div>
   );
