@@ -4,10 +4,11 @@ import { FiAlignJustify, FiLogOut, FiUser } from "react-icons/fi";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Navbar = () => {
-  const { user, logout } = useAuth()
-  const navigate = useNavigate()
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const imgRef = useRef();
@@ -22,8 +23,8 @@ const Navbar = () => {
   };
   const logOutHandler = () => {
     logout();
-    navigate('/')
-    toast.success('Successfully Logout')
+    navigate("/");
+    toast.success("Successfully Logout");
   };
   console.log(user);
   return (
@@ -46,8 +47,9 @@ const Navbar = () => {
             </Link>
           </div>
           <div
-            className={`!visible ${collapse ? "block" : "hidden"
-              } absolute md:static top-14 bg-white w-full md:w-auto border shadow-xl md:border-none md:shadow-none items-center px-3 lg:!flex lg:basis-auto z-50`}
+            className={`!visible ${
+              collapse ? "block" : "hidden"
+            } absolute md:static top-14 bg-white w-full md:w-auto border shadow-xl md:border-none md:shadow-none items-center px-3 lg:!flex lg:basis-auto z-50`}
           >
             <ul className="flex mx-auto flex-col md:flex-row justify-center gap-5 py-3">
               <li>
@@ -75,11 +77,42 @@ const Navbar = () => {
                   Shop
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/about" className="border border-white p-1">
-                  About
-                </NavLink>
+              <li className="relative group">
+                <div className="flex  items-center -mt-1">
+                  <span className="border border-white p-1 hover:text-primary cursor-pointer">
+                    About
+                  </span>
+                  <IoMdArrowDropdown />
+                </div>
+
+                <ul className="absolute left-0 mt-2 min-w-max bg-white rounded shadow-lg p-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
+                  <li>
+                    <NavLink
+                      to="/about"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      About Us
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/privacy"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Privacy Policy
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/terms"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Terms & Conditions
+                    </NavLink>
+                  </li>
+                </ul>
               </li>
+
               <li>
                 <NavLink to="/portfolio" className="border border-white p-1">
                   Portfolio
@@ -108,8 +141,6 @@ const Navbar = () => {
                   </ul>
                 </details>
               </li> */}
-
-
             </ul>
           </div>
           {/* Right elements */}
@@ -125,8 +156,9 @@ const Navbar = () => {
                 />
                 <ul
                   ref={dropdownRef}
-                  className={`absolute py-2 px-1 z-[1000] m-0  min-w-max overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg  w-40 ${dropdownOpen ? "block left-auto right-0" : "hidden"
-                    }`}
+                  className={`absolute py-2 px-1 z-[1000] m-0  min-w-max overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg  w-40 ${
+                    dropdownOpen ? "block left-auto right-0" : "hidden"
+                  }`}
                 >
                   {user && (
                     <li>

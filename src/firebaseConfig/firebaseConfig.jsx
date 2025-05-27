@@ -6,13 +6,14 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB1QjtlTclDhO49vvA2x_-eKj5WwBWo0hU",
-  authDomain: "dream-craft-events.firebaseapp.com",
-  projectId: "dream-craft-events",
-  storageBucket: "dream-craft-events.appspot.com",
-  messagingSenderId: "428426162466",
-  appId: "1:428426162466:web:0cbda1c95851c51ac4757b"
+  apiKey: "AIzaSyBQysagE3aGiM39xem9iU-59w3lIuQ8sfs",
+  authDomain: "dream-craft-events-da8fb.firebaseapp.com",
+  projectId: "dream-craft-events-da8fb",
+  storageBucket: "dream-craft-events-da8fb.appspot.com",
+  messagingSenderId: "923847074423",
+  appId: "1:923847074423:web:6cc8329fa7464c9a751c72"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
